@@ -69,6 +69,11 @@ export class LinkService {
     if (!this.isValidLink(newLink)) {
       throw new Error('Invalid link format');
     }
+
+    if (this.getLinks().includes(newLink) && oldLink !== newLink) {
+      throw new Error('Link already exists');
+    }
+
     let links = this.getLinks();
     const index = links.findIndex((l) => l === oldLink);
     if (index !== -1) {

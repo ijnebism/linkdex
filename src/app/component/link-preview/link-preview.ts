@@ -17,6 +17,8 @@ enum MODE {
 export class LinkPreview {
   @Input() link: string = '';
   newLink: string = '';
+  editError: string = '';
+  showInvalidPopup: boolean = false;
 
   constructor(private linkService: LinkService) {}
 
@@ -26,6 +28,8 @@ export class LinkPreview {
   startEdit() {
     this.mode = this.MODE.EDIT;
     this.newLink = this.link;
+    this.editError = '';
+    this.showInvalidPopup = false;
   }
 
   startDelete() {
@@ -43,8 +47,17 @@ export class LinkPreview {
   }
 
   editLink() {
-    this.linkService.editLink(this.link, this.newLink);
-    this.link = this.newLink;
-    this.mode = this.MODE.VIEW;
+    try {
+      this.linkService.editLink(this.link, this.newLink);
+      this.link = this.newLink;
+      this.mode = this.MODE.VIEW;
+    } catch (error) {
+      this.showInvalidPopup = true;
+      this.editError = error instanceof Error ? error.message : 'An unknown error occurred';
+
+      setTimeout(() => {
+        this.showInvalidPopup = false;
+      }, 3000);
+    }
   }
 }

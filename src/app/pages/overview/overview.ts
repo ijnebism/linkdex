@@ -15,6 +15,8 @@ export class Overview {
   newLink = '';
   links: string[] = [];
   selectedLink: string = '';
+  showInvalidPopup: boolean = false;
+  invalidMessage: string = '';
 
   constructor(
     private router: Router,
@@ -33,7 +35,11 @@ export class Overview {
       this.router.navigate(['/results', encodeURIComponent(this.newLink)]);
       this.newLink = '';
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'An error occurred');
+      this.invalidMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      this.showInvalidPopup = true;
+      setTimeout(() => {
+        this.showInvalidPopup = false;
+      }, 3000);
     }
   }
 }

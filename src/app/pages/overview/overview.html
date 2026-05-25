@@ -1,8 +1,17 @@
 <div class="container">
   <div class="header">
-    <img class="logo" src="/linkdex-logo.png" alt="Linkdex logo">
+    <img class="logo" src="/linkdex-logo.png" alt="Linkdex logo" />
     <form class="add-bar" (ngSubmit)="addLink()">
-      <input class="add-bar-field" type="text" placeholder="Add a new link" name="link" [(ngModel)]="newLink">
+      @if (showInvalidPopup) {
+        <div class="invalid-text">{{ invalidMessage }}</div>
+      }
+      <input
+        class="add-bar-field"
+        type="text"
+        placeholder="Add a new link"
+        name="link"
+        [(ngModel)]="newLink"
+      />
       <button class="add-button btn" type="submit">Add</button>
     </form>
   </div>
