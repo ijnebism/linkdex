@@ -11,10 +11,11 @@
 // Styles for the body
 body {
   margin: 0;
+  background-color: #43b7ff;
   background-size: 60px 60px;
   background-image:
-    linear-gradient(to right, grey 1px, transparent 1px),
-    linear-gradient(to bottom, grey 1px, transparent 1px);
+    linear-gradient(to right, #3f6e99 1px, transparent 1px),
+    linear-gradient(to bottom, #3f6e99 1px, transparent 1px);
   height: 100vh;
 
   &::after {
