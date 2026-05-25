@@ -83,7 +83,8 @@
   display: block;
   position: relative;
   justify-content: center;
-  height: 80%;
+  height: 70%;
+  overflow: hidden;
 }
 
 .name {
@@ -91,8 +92,8 @@
   overflow-wrap: break-word;
   overflow: hidden;
   display: -webkit-box;
-  line-clamp: 13;
-  -webkit-line-clamp: 13;
+  line-clamp: 11;
+  -webkit-line-clamp: 11;
   -webkit-box-orient: vertical;
 }
 
