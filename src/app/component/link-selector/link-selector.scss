@@ -64,10 +64,10 @@
 @keyframes pointer-bob {
   0%,
   100% {
-    transform: translateY(0) scaleX(-1) rotate(180deg);
+    transform: translateX(-50%) translateY(0) scaleX(-1) rotate(180deg);
   }
   50% {
-    transform: translateY(-6px) scaleX(-1) rotate(180deg);
+    transform: translateX(-50%) translateY(-6px) scaleX(-1) rotate(180deg);
   }
 }
 
@@ -84,7 +84,8 @@
   &.selected-link::before {
     content: '';
     position: absolute;
-    left: 0%;
+    left: 50%;
+    transform: translateX(-50%);
     top: -45px; // Adjusted to position the pointer above the favicon
     width: 90px;
     height: 90px;
