@@ -1,0 +1,17 @@
+<div class="selector">
+  <div class="page-selector">
+    <button class="change-page btn" (click)="prevPage()"><</button>
+    <div class="page-number">PAGE {{ currentPage }} OF {{ totalPages }}</div>
+    <button class="change-page btn" (click)="nextPage()">></button>
+  </div>
+  <div class="link-grid">
+    @for (link of paginatedLinks; track $index) {
+      <img
+        [src]="'https://www.google.com/s2/favicons?domain=' + link"
+        alt="favicon"
+        (click)="selectLink(link)"
+        [class.selected-link]="link === selectedLink"
+      />
+    }
+  </div>
+</div>

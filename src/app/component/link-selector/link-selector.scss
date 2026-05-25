@@ -1,0 +1,67 @@
+.selector {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fcdad8;
+}
+
+// Page selector
+.change-page {
+  background-color: #ffcc01;
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+
+.page-number {
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 5px solid #a58c52;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px #7a683c;
+  background-image: url('/page-banner.jpg');
+  background-size: cover;
+}
+
+.page-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  padding: 20px;
+  gap: 20px;
+}
+
+// Favicon of links
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 20px;
+  margin: 0px 10% 5% 10%;
+  height: 100%;
+  border: 5px solid #a58c52;
+  align-items: center;
+  justify-items: center;
+  box-shadow: 3px 3px 0px #7a683c;
+  background-image: url('/grass.jpg');
+}
+
+.link-grid img {
+  width: auto;
+  height: 70%;
+  image-rendering: pixelated;
+  cursor: pointer;
+}
+
+.link-grid img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.selected-link {
+  background-color: #0000001e;
+}

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="header">
+    <img class="logo" src="/linkdex-logo.png" alt="Linkdex Title" />
+    <form class="add-bar" (ngSubmit)="addLink()">
+      <input type="text" placeholder="Add a new link" name="link" [(ngModel)]="newLink" />
+      <button class="add-button btn" type="submit">Add</button>
+    </form>
+  </div>
+
+  <div class="box">
+    <app-link-preview [link]="selectedLink"></app-link-preview>
+    <app-link-selector [links]="links" (linkSelected)="selectedLink = $event"></app-link-selector>
+  </div>
+</div>

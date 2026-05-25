@@ -1,0 +1,52 @@
+<!-- This is the left side showing the link data e.g favicon and link -->
+<div class="preview">
+  <h2>Link Data</h2>
+  <!-- Display if a link is selected -->
+  @if (link) {
+    <div class="favicon-wrapper">
+      <img
+        class="favicon"
+        [src]="'https://www.google.com/s2/favicons?domain=' + link"
+        alt="favicon"
+      />
+    </div>
+    <div class="info-section">
+      <div class="name-wrapper">
+        @if (mode == MODE.EDIT) {
+          <textarea type="text" class="link-input" [(ngModel)]="newLink"></textarea>
+        } @else {
+          <a class="name" [href]="link" target="_blank" rel="noopener noreferrer">
+            {{ link }}
+          </a>
+        }
+      </div>
+      @switch (mode) {
+        <!-- Default -->
+        @case (MODE.VIEW) {
+          <div class="button-wrapper">
+            <button class="edit-button btn" (click)="startEdit()">Edit</button>
+            <button class="delete-button btn" (click)="startDelete()">Delete</button>
+          </div>
+        }
+        <!-- Delete Mode -->
+        @case (MODE.DELETE) {
+          <div class="button-wrapper">
+            <button class="edit-button btn" (click)="cancel()">Cancel</button>
+            <button class="delete-button btn" (click)="deleteLink()">Confirm</button>
+          </div>
+        }
+        <!-- Edit Mode -->
+        @case (MODE.EDIT) {
+          <div class="button-wrapper">
+            <button class="delete-button btn" (click)="cancel()">Cancel</button>
+            <button class="save-button btn" (click)="editLink()">Save</button>
+          </div>
+        }
+      }
+    </div>
+    <!-- Display if no link is selected -->
+  } @else {
+    <div class="favicon-wrapper"></div>
+    <p class="no-link">Select a link to see its details.</p>
+  }
+</div>

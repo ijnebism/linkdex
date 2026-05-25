@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+// colors
+:root {
+  --grey-bg: #70737c;
+
+  --link-color: #ffcc01;
+}
+
+// Styles for the body
+body {
+  margin: 0;
+  background-size: 60px 60px;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  height: 100vh;
+}
+
+// Global button styles
+.btn {
+  border: 3px solid #1a1a1a;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+// Global font
+* {
+  font-family: 'Press Start 2P', Arial, Helvetica, sans-serif;
+}
