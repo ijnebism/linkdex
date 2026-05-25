@@ -1,17 +1,24 @@
 <div class="selector">
   <div class="page-selector">
-    <button class="change-page btn" (click)="prevPage()"><</button>
+    <button type="button" class="change-page btn" (click)="prevPage()" aria-label="Previous page">&lt;</button>
     <div class="page-number">PAGE {{ currentPage }} OF {{ totalPages }}</div>
-    <button class="change-page btn" (click)="nextPage()">></button>
+    <button type="button" class="change-page btn" (click)="nextPage()" aria-label="Next page">&gt;</button>
   </div>
   <div class="link-grid">
     @for (link of paginatedLinks; track $index) {
-      <img
-        [src]="'https://www.google.com/s2/favicons?domain=' + link"
-        alt="favicon"
+      <button
+        type="button"
+        class="link-favicon"
         (click)="selectLink(link)"
         [class.selected-link]="link === selectedLink"
-      />
+        [attr.aria-label]="'Select link ' + link"
+      >
+        <img
+          class="favicon-thumb"
+          [src]="'https://www.google.com/s2/favicons?domain=' + link"
+          alt=""
+        />
+      </button>
     }
   </div>
 </div>

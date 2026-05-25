@@ -21,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 3px 3px 0px #7a683c;
-  background-image: url('/page-banner.jpg');
+  box-shadow: 3px 3px 0 #7a683c;
+  background-image: url(/page-banner.jpg);
   background-size: cover;
 }
 
@@ -41,25 +41,35 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
   padding: 20px;
-  margin: 0px 10% 5% 10%;
+  margin: 0 10% 5% 10%;
   height: 100%;
   border: 5px solid #a58c52;
   align-items: center;
   justify-items: center;
-  box-shadow: 3px 3px 0px #7a683c;
-  background-image: url('/grass.jpg');
+  box-shadow: 3px 3px 0 #7a683c;
+  background-image: url(/grass.jpg);
 }
 
-.link-grid img {
+.link-favicon {
   width: auto;
   height: 70%;
-  image-rendering: pixelated;
+  padding: 0;
+  border: none;
+  background: transparent;
   cursor: pointer;
 }
 
-.link-grid img:hover {
+.link-favicon:hover {
   transform: scale(1.1);
   transition: transform 0.2s;
+}
+
+.favicon-thumb {
+  width: auto;
+  height: 100%;
+  image-rendering: pixelated;
+  display: block;
+  pointer-events: none;
 }
 
 .selected-link {

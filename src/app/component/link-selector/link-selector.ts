@@ -7,21 +7,22 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './link-selector.scss',
 })
 export class LinkSelector {
+  static readonly ITEMS_PER_PAGE = 20;
+
   @Input() links: string[] = [];
   selectedLink: string = '';
 
   @Output() linkSelected = new EventEmitter<string>();
 
   currentPage: number = 1;
-  ITEMS_PER_PAGE: number = 20;
 
   get totalPages() {
-    return Math.ceil((this.links.length + 1) / this.ITEMS_PER_PAGE);
+    return Math.ceil((this.links.length + 1) / LinkSelector.ITEMS_PER_PAGE);
   }
 
   get paginatedLinks() {
-    const startIndex = (this.currentPage - 1) * this.ITEMS_PER_PAGE;
-    return this.links.slice(startIndex, startIndex + this.ITEMS_PER_PAGE);
+    const startIndex = (this.currentPage - 1) * LinkSelector.ITEMS_PER_PAGE;
+    return this.links.slice(startIndex, startIndex + LinkSelector.ITEMS_PER_PAGE);
   }
 
   nextPage() {
