@@ -12,6 +12,7 @@ export class Results {
 
   constructor(private router: Router) {}
 
+  // Redirect to overview if no link is provided in the state
   ngOnInit() {
     const link = history.state.link;
     if (!link) {

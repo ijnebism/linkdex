@@ -59,6 +59,7 @@
   cursor: pointer;
 }
 
+// Key frames for bobbing animation of favicons and pointer
 @keyframes bob {
   0%,
   100% {
@@ -79,7 +80,6 @@
   }
 }
 
-// The grid item wrapper — replace with your actual selector
 .link-favicon {
   position: relative;
 
