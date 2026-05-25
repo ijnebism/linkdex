@@ -22,7 +22,7 @@ export class LinkService {
     if (!trimmedLink) return false;
 
     // Check if the link starts with http:// or https://
-    if (!/^https?:\/\//i.test(trimmedLink)) {
+    if (!/^https?:\/\/.+/i.test(trimmedLink)) {
       return false;
     }
 
@@ -30,7 +30,6 @@ export class LinkService {
     if (!/^[a-zA-Z0-9\-._~:/?#[\]@!$&'()*+,;=%]+$/.test(trimmedLink)) {
       return false;
     }
-
     return true;
   }
 
