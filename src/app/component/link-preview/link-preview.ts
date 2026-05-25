@@ -15,7 +15,17 @@ enum MODE {
   styleUrl: './link-preview.scss',
 })
 export class LinkPreview {
-  @Input() link: string = '';
+  @Input()
+  set link(value: string) {
+    this._link = value;
+    this.mode = MODE.VIEW;
+  }
+
+  get link() {
+    return this._link;
+  }
+
+  private _link: string = '';
   newLink: string = '';
   editError: string = '';
   showInvalidPopup: boolean = false;
