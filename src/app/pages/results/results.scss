@@ -23,8 +23,7 @@
 
 .link {
   color: var(--link-color);
-  font-size: 1.4em;
-  text-wrap: break-word;
+  font-size: 1.4rem;
   text-align: center;
   word-break: break-word;
 }
@@ -34,7 +33,9 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  font-size: 1em;
+  max-height: 60vh;
+  overflow-y: auto;
+  font-size: 1rem;
 }
 
 .back-button {
