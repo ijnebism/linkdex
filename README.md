@@ -34,9 +34,9 @@ This project allows users to add, view, edit, and delete links. Each link is dis
 ### Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/ijnebism/benjamin-frontend-display.git
 
-cd <project-folder>
+cd benjamin-frontend-display
 
 npm install
 
