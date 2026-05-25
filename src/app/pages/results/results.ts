@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-results',
@@ -10,12 +10,14 @@ import { RouterLink } from '@angular/router';
 export class Results {
   link: string = '';
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     const link = history.state.link;
-    if (typeof link === 'string') {
-      this.link = link;
+    if (!link) {
+      this.router.navigate(['/']);
     } else {
-      this.link = '';
+      this.link = link;
     }
   }
 }
