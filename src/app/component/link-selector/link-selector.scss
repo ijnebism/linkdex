@@ -59,9 +59,48 @@
   cursor: pointer;
 }
 
-.link-favicon:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s;
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pointer-bob {
+  0%,
+  100% {
+    transform: translateY(0) scaleX(-1) rotate(180deg);
+  }
+  50% {
+    transform: translateY(-6px) scaleX(-1) rotate(180deg);
+  }
+}
+
+// The grid item wrapper — replace with your actual selector
+.link-favicon {
+  position: relative;
+
+  // Selected state: pixel hand pointer appears to the above
+  &.selected-link::before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    top: -45px;
+    width: 90px;
+    height: 90px;
+    background-image: url(/pointer.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: pointer-bob 1s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  &:hover {
+    animation: bob 1s ease-in-out infinite;
+  }
 }
 
 .favicon-thumb {
@@ -70,8 +109,4 @@
   image-rendering: pixelated;
   display: block;
   pointer-events: none;
-}
-
-.selected-link {
-  background-color: #0000001e;
 }

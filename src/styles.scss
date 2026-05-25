@@ -16,6 +16,20 @@ body {
     linear-gradient(to right, grey 1px, transparent 1px),
     linear-gradient(to bottom, grey 1px, transparent 1px);
   height: 100vh;
+
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.06) 2px,
+      rgba(0, 0, 0, 0.06) 4px
+    );
+    pointer-events: none;
+  }
 }
 
 // Global button styles
@@ -23,11 +37,16 @@ body {
   border: 3px solid #000;
   cursor: pointer;
   font-weight: bold;
-}
 
-.btn:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.1s;
+  }
 }
 
 // Global font
