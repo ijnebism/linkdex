@@ -13,7 +13,7 @@
 }
 
 .page-number {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: bold;
   border: 5px solid #a58c52;
   height: 100%;
@@ -50,15 +50,6 @@
   background-image: url(/grass.jpg);
 }
 
-.link-favicon {
-  width: auto;
-  height: 70%;
-  padding: 0;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-}
-
 // Key frames for bobbing animation of favicons and pointer
 @keyframes bob {
   0%,
@@ -82,13 +73,19 @@
 
 .link-favicon {
   position: relative;
+  width: auto;
+  height: 70%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 
   // Selected state: pixel hand pointer appears to the above
   &.selected-link::before {
     content: '';
     position: absolute;
     left: 0%;
-    top: -45px;
+    top: -45px; // Adjusted to position the pointer above the favicon
     width: 90px;
     height: 90px;
     background-image: url(/pointer.png);

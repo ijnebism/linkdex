@@ -109,8 +109,8 @@
 
 .invalid-text {
   position: absolute;
-  top: 180px;
-  left: 00px;
+  top: 180px; // Clears the textarea height
+  left: 0;
   padding: 8px 14px;
   background: #2b0f0f;
   border: 3px solid #ff4d4d;

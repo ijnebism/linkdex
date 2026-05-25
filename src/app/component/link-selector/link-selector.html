@@ -1,11 +1,15 @@
 <div class="selector">
   <div class="page-selector">
-    <button type="button" class="change-page btn" (click)="prevPage()" aria-label="Previous page">&lt;</button>
+    <button type="button" class="change-page btn" (click)="prevPage()" aria-label="Previous page">
+      &lt;
+    </button>
     <div class="page-number">PAGE {{ currentPage }} OF {{ totalPages }}</div>
-    <button type="button" class="change-page btn" (click)="nextPage()" aria-label="Next page">&gt;</button>
+    <button type="button" class="change-page btn" (click)="nextPage()" aria-label="Next page">
+      &gt;
+    </button>
   </div>
   <div class="link-grid">
-    @for (link of paginatedLinks; track $index) {
+    @for (link of paginatedLinks; track link) {
       <button
         type="button"
         class="link-favicon"

@@ -37,7 +37,7 @@ export class LinkPreview {
 
   startEdit() {
     this.mode = this.MODE.EDIT;
-    this.newLink = this.link;
+    this.newLink = this._link;
     this.editError = '';
     this.showInvalidPopup = false;
   }
@@ -51,15 +51,15 @@ export class LinkPreview {
   }
 
   deleteLink() {
-    this.linkService.deleteLink(this.link);
+    this.linkService.deleteLink(this._link);
     this.mode = this.MODE.VIEW;
-    this.link = '';
+    this._link = '';
   }
 
   editLink() {
     try {
-      this.linkService.editLink(this.link, this.newLink);
-      this.link = this.newLink;
+      this.linkService.editLink(this._link, this.newLink);
+      this._link = this.newLink;
       this.mode = this.MODE.VIEW;
     } catch (error) {
       this.showInvalidPopup = true;
