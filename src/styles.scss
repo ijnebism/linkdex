@@ -2,9 +2,10 @@
 
 // colors
 :root {
+  --light-grey-bg: #87878a;
   --grey-bg: #70737c;
-
-  --link-color: #ffcc01;
+  --btn-color: #ffcc01;
+  --link-color: #23a7ff;
 }
 
 // Styles for the body
@@ -19,7 +20,7 @@ body {
 
 // Global button styles
 .btn {
-  border: 3px solid #1a1a1a;
+  border: 3px solid #000;
   cursor: pointer;
   font-weight: bold;
 }

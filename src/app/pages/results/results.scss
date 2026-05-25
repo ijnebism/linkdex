@@ -17,12 +17,12 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  background: #70737c;
+  background: var(--grey-bg);
   overflow: hidden;
 }
 
 .link {
-  color: #23a7ff;
+  color: var(--link-color);
   font-size: 1.4em;
   text-wrap: break-word;
   text-align: center;
@@ -39,6 +39,6 @@
 
 .back-button {
   padding: 10px;
-  background: #ffcc01;
-  border: 3px solid #1a1a1a;
+  background: var(--btn-color);
+  border: 3px solid #000;
 }
