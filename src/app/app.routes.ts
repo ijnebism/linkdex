@@ -4,6 +4,6 @@ import { Results } from './pages/results/results';
 
 export const routes: Routes = [
   { path: '', component: Overview },
-  { path: 'results/:link', component: Results },
+  { path: 'results', component: Results },
   { path: '**', redirectTo: '' },
 ];

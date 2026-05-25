@@ -11,7 +11,11 @@ export class Results {
   link: string = '';
 
   ngOnInit() {
-    const urlSegments = window.location.pathname.split('/');
-    this.link = decodeURIComponent(urlSegments[urlSegments.length - 1]);
+    const link = history.state.link;
+    if (typeof link === 'string') {
+      this.link = link;
+    } else {
+      this.link = '';
+    }
   }
 }

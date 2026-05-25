@@ -32,7 +32,9 @@ export class Overview {
   addLink() {
     try {
       this.linkService.addLink(this.newLink);
-      this.router.navigate(['/results', encodeURIComponent(this.newLink)]);
+      this.router.navigate(['/results'], {
+        state: { link: this.newLink },
+      });
       this.newLink = '';
     } catch (error) {
       this.invalidMessage = error instanceof Error ? error.message : 'An unknown error occurred';
